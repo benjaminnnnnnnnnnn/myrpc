@@ -2,17 +2,48 @@ syntax = "proto3"; //clarify version
 
 package fixbug;
 
+option cc_generic_services = true;
+
+message ResultCode{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
 
 //define login request message
 message LoginRequest{
-    string name = 1;
-    string pwd = 2;
+    bytes name = 1;
+    bytes pwd = 2;
 }
 
 
 //define login response message
 message LoginResponse{
-    int32 errcode = 1;
-    string errmsg = 2;
-    bool success = 3;
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+message GetFriendListsRequest{
+    uint32 userid = 1;
+
+}
+
+//define user
+message User{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Sex{
+        MAN = 0;
+        WOMAN = 1;
+    }
+    Sex sex = 3;
+}
+
+message GetFriendListsResponse{
+    ResultCode result = 1;
+    repeated User friend_list = 2;
+}
+
+service UserServiceRpc{
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
 }
