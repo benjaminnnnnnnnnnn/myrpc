@@ -1,0 +1,18 @@
+syntax = "proto3"; //clarify version
+
+package fixbug;
+
+
+//define login request message
+message LoginRequest{
+    string name = 1;
+    string pwd = 2;
+}
+
+
+//define login response message
+message LoginResponse{
+    int32 errcode = 1;
+    string errmsg = 2;
+    bool success = 3;
+}
