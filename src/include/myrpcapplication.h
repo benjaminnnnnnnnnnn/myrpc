@@ -8,7 +8,7 @@ public:
     //initialization
     static void Init(int argc, char **argv);
     static MyrpcApplication& GetInstance();
-
+    static MyrpcConfig& GetConfig();
 private:
 //config file
     static MyrpcConfig m_config;
