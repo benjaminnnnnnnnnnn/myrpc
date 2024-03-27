@@ -1,5 +1,7 @@
 #pragma once
 
+#include <myrpcconfig.h>
+
 //myrpc base class
 class MyrpcApplication{
 public:
@@ -8,6 +10,9 @@ public:
     static MyrpcApplication& GetInstance();
 
 private:
+//config file
+    static MyrpcConfig m_config;
+
     MyrpcApplication(){}
     MyrpcApplication(const MyrpcApplication&) = delete;
     MyrpcApplication(MyrpcApplication&&) = delete;
