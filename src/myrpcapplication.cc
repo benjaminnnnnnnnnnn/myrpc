@@ -36,12 +36,16 @@ void MyrpcApplication::Init(int argc, char **argv){
         }
     }
 
+
     //config file rpcserver_ip rpcserver_port zookeeper_ip zookeeper_port
     m_config.LoadConfigFile(config_file.c_str());
+    
+    /*
     std::cout << "rpcserverip=" << m_config.Load("rpcserverip") << std::endl;
     std::cout << "rpcserverport=" << m_config.Load("rpcserverport") << std::endl;
     std::cout << "zookeeperip=" << m_config.Load("zookeeperip") << std::endl;
     std::cout << "zookeeperport=" << m_config.Load("zookeeperport") << std::endl;
+    */
 }
     
     
@@ -49,4 +53,9 @@ void MyrpcApplication::Init(int argc, char **argv){
 MyrpcApplication& MyrpcApplication::GetInstance(){
     static MyrpcApplication app;
     return app;
+}
+
+//return config
+MyrpcConfig& MyrpcApplication::GetConfig(){
+    return m_config;
 }
