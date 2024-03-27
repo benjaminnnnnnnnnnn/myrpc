@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/provider.dir/userservice.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o -o ../../../bin/provider   -L/home/gaoaoxiang/myrpc/lib  -Wl,-rpath,/home/gaoaoxiang/myrpc/lib ../../../lib/libmyrpc.so -lprotobuf 
+/usr/bin/c++ -g -rdynamic CMakeFiles/provider.dir/userservice.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o -o ../../../bin/provider   -L/home/gaoaoxiang/myrpc/lib  -Wl,-rpath,/home/gaoaoxiang/myrpc/lib ../../../lib/libmyrpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread 

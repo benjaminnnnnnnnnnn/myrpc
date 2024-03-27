@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gaoaoxiang/myrpc/src/myrpcapplication.cc" "src/CMakeFiles/myrpc.dir/myrpcapplication.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpcapplication.cc.o.d"
+  "/home/gaoaoxiang/myrpc/src/myrpcconfig.cc" "src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o.d"
   "/home/gaoaoxiang/myrpc/src/rpcprovider.cc" "src/CMakeFiles/myrpc.dir/rpcprovider.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/rpcprovider.cc.o.d"
   )
 

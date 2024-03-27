@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/gaoaoxiang/myrpc/src/include -I/home/gaoaoxiang/myrpc/example
 
-CXX_FLAGS = 
+CXX_FLAGS = -g
 

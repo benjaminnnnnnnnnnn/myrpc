@@ -2,6 +2,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(myrpc)
 
+#set debug ,could use gdb debugging
+set(CMAKE_BUILD_TYPE "Debug")
+
 #set executable output path
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #set library output path

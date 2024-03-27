@@ -154,6 +154,30 @@ myrpcapplication.cc.s:
 	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcapplication.cc.s
 .PHONY : myrpcapplication.cc.s
 
+myrpcconfig.o: myrpcconfig.cc.o
+.PHONY : myrpcconfig.o
+
+# target to build an object file
+myrpcconfig.cc.o:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o
+.PHONY : myrpcconfig.cc.o
+
+myrpcconfig.i: myrpcconfig.cc.i
+.PHONY : myrpcconfig.i
+
+# target to preprocess a source file
+myrpcconfig.cc.i:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcconfig.cc.i
+.PHONY : myrpcconfig.cc.i
+
+myrpcconfig.s: myrpcconfig.cc.s
+.PHONY : myrpcconfig.s
+
+# target to generate assembly for a file
+myrpcconfig.cc.s:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcconfig.cc.s
+.PHONY : myrpcconfig.cc.s
+
 rpcprovider.o: rpcprovider.cc.o
 .PHONY : rpcprovider.o
 
@@ -190,6 +214,9 @@ help:
 	@echo "... myrpcapplication.o"
 	@echo "... myrpcapplication.i"
 	@echo "... myrpcapplication.s"
+	@echo "... myrpcconfig.o"
+	@echo "... myrpcconfig.i"
+	@echo "... myrpcconfig.s"
 	@echo "... rpcprovider.o"
 	@echo "... rpcprovider.i"
 	@echo "... rpcprovider.s"
