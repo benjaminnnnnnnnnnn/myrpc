@@ -154,6 +154,30 @@ myrpcapplication.cc.s:
 	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcapplication.cc.s
 .PHONY : myrpcapplication.cc.s
 
+myrpcchannel.o: myrpcchannel.cc.o
+.PHONY : myrpcchannel.o
+
+# target to build an object file
+myrpcchannel.cc.o:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o
+.PHONY : myrpcchannel.cc.o
+
+myrpcchannel.i: myrpcchannel.cc.i
+.PHONY : myrpcchannel.i
+
+# target to preprocess a source file
+myrpcchannel.cc.i:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcchannel.cc.i
+.PHONY : myrpcchannel.cc.i
+
+myrpcchannel.s: myrpcchannel.cc.s
+.PHONY : myrpcchannel.s
+
+# target to generate assembly for a file
+myrpcchannel.cc.s:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcchannel.cc.s
+.PHONY : myrpcchannel.cc.s
+
 myrpcconfig.o: myrpcconfig.cc.o
 .PHONY : myrpcconfig.o
 
@@ -238,6 +262,9 @@ help:
 	@echo "... myrpcapplication.o"
 	@echo "... myrpcapplication.i"
 	@echo "... myrpcapplication.s"
+	@echo "... myrpcchannel.o"
+	@echo "... myrpcchannel.i"
+	@echo "... myrpcchannel.s"
 	@echo "... myrpcconfig.o"
 	@echo "... myrpcconfig.i"
 	@echo "... myrpcconfig.s"

@@ -125,12 +125,27 @@ src/CMakeFiles/myrpc.dir/rpcprovider.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/rpcprovider.cc.s"
 	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaoaoxiang/myrpc/src/rpcprovider.cc -o CMakeFiles/myrpc.dir/rpcprovider.cc.s
 
+src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o: src/CMakeFiles/myrpc.dir/flags.make
+src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o: ../src/myrpcchannel.cc
+src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o: src/CMakeFiles/myrpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o -MF CMakeFiles/myrpc.dir/myrpcchannel.cc.o.d -o CMakeFiles/myrpc.dir/myrpcchannel.cc.o -c /home/gaoaoxiang/myrpc/src/myrpcchannel.cc
+
+src/CMakeFiles/myrpc.dir/myrpcchannel.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myrpc.dir/myrpcchannel.cc.i"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaoaoxiang/myrpc/src/myrpcchannel.cc > CMakeFiles/myrpc.dir/myrpcchannel.cc.i
+
+src/CMakeFiles/myrpc.dir/myrpcchannel.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/myrpcchannel.cc.s"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaoaoxiang/myrpc/src/myrpcchannel.cc -o CMakeFiles/myrpc.dir/myrpcchannel.cc.s
+
 # Object files for target myrpc
 myrpc_OBJECTS = \
 "CMakeFiles/myrpc.dir/myrpcapplication.cc.o" \
 "CMakeFiles/myrpc.dir/myrpcconfig.cc.o" \
 "CMakeFiles/myrpc.dir/rpcheader.pb.cc.o" \
-"CMakeFiles/myrpc.dir/rpcprovider.cc.o"
+"CMakeFiles/myrpc.dir/rpcprovider.cc.o" \
+"CMakeFiles/myrpc.dir/myrpcchannel.cc.o"
 
 # External object files for target myrpc
 myrpc_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ myrpc_EXTERNAL_OBJECTS =
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/rpcheader.pb.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/rpcprovider.cc.o
+../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/build.make
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../lib/libmyrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../lib/libmyrpc.a"
 	cd /home/gaoaoxiang/myrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/myrpc.dir/cmake_clean_target.cmake
 	cd /home/gaoaoxiang/myrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myrpc.dir/link.txt --verbose=$(VERBOSE)
 

@@ -140,12 +140,14 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
     google::protobuf::Message *response = service->GetResponsePrototype(method).New();
 
     //bind closure callback
+    //send response
     google::protobuf::Closure *done = google::protobuf::NewCallback<RpcProvider,
                                                                     const muduo::net::TcpConnectionPtr&,
                                                                     google::protobuf::Message*>(this, &RpcProvider::SendRpcResponse, conn, response);
 
     //based on rpc request,invoke method
     //(controller,request,response,done)
+    //do work
     service->CallMethod(method, nullptr, request, response, done);
 }
 
