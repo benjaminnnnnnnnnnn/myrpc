@@ -534,7 +534,20 @@ src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o: ../src/myrpcchannel.cc \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  ../src/include/myrpcapplication.h \
+  ../src/include/myrpcconfig.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h
 
 src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o: ../src/myrpcconfig.cc \
   /usr/include/stdc-predef.h \
@@ -1494,10 +1507,6 @@ src/CMakeFiles/myrpc.dir/rpcprovider.cc.o: ../src/rpcprovider.cc \
 
 /usr/include/boost/container_hash/hash_fwd.hpp:
 
-/usr/include/boost/type_traits/is_lvalue_reference.hpp:
-
-/usr/include/netinet/in.h:
-
 /usr/include/muduo/net/InetAddress.h:
 
 /usr/include/muduo/net/Buffer.h:
@@ -1533,6 +1542,12 @@ src/CMakeFiles/myrpc.dir/rpcprovider.cc.o: ../src/rpcprovider.cc \
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
 ../src/include/rpcprovider.h:
+
+/usr/include/boost/type_traits/is_lvalue_reference.hpp:
+
+/usr/include/netinet/in.h:
+
+/usr/include/arpa/inet.h:
 
 /usr/include/boost/type_traits/is_reference.hpp:
 
@@ -1772,9 +1787,9 @@ src/CMakeFiles/myrpc.dir/rpcprovider.cc.o: ../src/rpcprovider.cc \
 
 /usr/include/c++/11/bits/invoke.h:
 
-/usr/include/x86_64-linux-gnu/bits/in.h:
-
 /usr/local/include/google/protobuf/wire_format.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/include/c++/11/bits/postypes.h:
 

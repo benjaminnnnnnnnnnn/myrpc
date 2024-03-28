@@ -13,7 +13,7 @@ class UserService : public fixbug::UserServiceRpc{
     bool Login(std::string name,std::string pwd){
         std::cout << "local service : login" << std::endl;
         std::cout << "name:" << name << "  pwd:" << pwd << std::endl;
-        return true;
+        return false;
     }
 
     /*

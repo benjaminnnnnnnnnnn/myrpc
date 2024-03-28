@@ -8,3 +8,6 @@
 /home/gaoaoxiang/myrpc/build/example/callee/CMakeFiles/provider.dir
 /home/gaoaoxiang/myrpc/build/example/callee/CMakeFiles/edit_cache.dir
 /home/gaoaoxiang/myrpc/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/gaoaoxiang/myrpc/build/example/caller/CMakeFiles/consumer.dir
+/home/gaoaoxiang/myrpc/build/example/caller/CMakeFiles/edit_cache.dir
+/home/gaoaoxiang/myrpc/build/example/caller/CMakeFiles/rebuild_cache.dir

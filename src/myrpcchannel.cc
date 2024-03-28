@@ -44,7 +44,7 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     //organize str to send
     std::string send_rpc_str;
-    send_rpc_str.insert(0, std::string((char*)&header_size),4);//header_size
+    send_rpc_str.insert(0, std::string((char*)&header_size,4));//header_size
     send_rpc_str += rpc_header_str;//rpc_header_str
     send_rpc_str += args_str;//request
 
@@ -89,16 +89,16 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     //receive response value
     char recv_buf[1024] = {0};
     int recv_size = 0;
-    if(-1 == recv(clientfd,recv_buf,1024,0)){
+    if(-1 == (recv_size = recv(clientfd,recv_buf,1024,0))){
         std::cout<< "recv error! errno:" << errno << std::endl;
         close(clientfd);
         return;
     }
 
     //write response into response
-    std::string response_str(recv_buf,0,recv_size);
-    if(response->ParseFromString(response_str)){
-        std::cout << "parse error! response_str:" << response_str << std::endl;
+    //std::string response_str(recv_buf,0,recv_size);//construct error
+    if(!response->ParseFromArray(recv_buf, recv_size)){
+        std::cout << "parse error! response_str:" << recv_buf << std::endl;
         close(clientfd);
         return;
     }
