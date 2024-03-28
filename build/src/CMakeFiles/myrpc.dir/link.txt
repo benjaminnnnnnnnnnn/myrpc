@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../../lib/libmyrpc.a CMakeFiles/myrpc.dir/myrpcapplication.cc.o CMakeFiles/myrpc.dir/myrpcconfig.cc.o CMakeFiles/myrpc.dir/rpcprovider.cc.o
+/usr/bin/ar qc ../../lib/libmyrpc.a CMakeFiles/myrpc.dir/myrpcapplication.cc.o CMakeFiles/myrpc.dir/myrpcconfig.cc.o CMakeFiles/myrpc.dir/rpcheader.pb.cc.o CMakeFiles/myrpc.dir/rpcprovider.cc.o
 /usr/bin/ranlib ../../lib/libmyrpc.a

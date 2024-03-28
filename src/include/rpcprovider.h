@@ -39,4 +39,7 @@ private:
 
     //message read&write linked callback
     void OnMessage(const muduo::net::TcpConnectionPtr&, muduo::net::Buffer*, muduo::Timestamp);
+
+    //closure callback, serialize rpc response and send it
+    void SendRpcResponse(const muduo::net::TcpConnectionPtr&, google::protobuf::Message*);
 };
