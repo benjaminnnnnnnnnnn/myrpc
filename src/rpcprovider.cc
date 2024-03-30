@@ -15,7 +15,9 @@ void RpcProvider::NotifyService(google::protobuf::Service *service){
     //get method count
     int methodCnt = pserviceDesc->method_count();
 
-    std::cout << "service_name:" << service_name << std::endl;
+    //std::cout << "service_name:" << service_name << std::endl;
+    LOG_INFO("service_name:%s", service_name.c_str());
+
 
     for(int i = 0; i<methodCnt; ++i){
         //get methods descriptor under service by index (abstract)
@@ -23,7 +25,9 @@ void RpcProvider::NotifyService(google::protobuf::Service *service){
         std::string method_name = pmethodDesc->name();
         service_info.m_methodMap.insert({method_name,pmethodDesc});
 
-        std::cout << "method_name:" << method_name << std::endl;
+        //std::cout << "method_name:" << method_name << std::endl;
+        LOG_INFO("method_name:%s", method_name.c_str());
+
     }
     
 
@@ -101,29 +105,36 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
         args_size = rpcHeader.args_size();
     }else{
         //failed
-        std::cout << "rpc_header_str:" << rpc_header_str << "  parse failed!" << std::endl;
+        //std::cout << "rpc_header_str:" << rpc_header_str << "  parse failed!" << std::endl;
+        LOG_ERROR("rpc_header_str:%s,parse failed!",rpc_header_str.c_str());
         return;
     }
 
     std::string args_str = recv_buf.substr(4+header_size, args_size);
 
-    std::cout << "Request:" << rpc_header_str << std::endl;
-    std::cout << "service_name:" << service_name << std::endl;
-    std::cout << "method_name:" << method_name << std::endl;
-    std::cout << "args_str:" << args_str << std::endl;
+    //std::cout << "Request:" << std::endl;
+    //std::cout << "service_name:" << service_name << std::endl;
+    //std::cout << "method_name:" << method_name << std::endl;
+    //std::cout << "args_str:" << args_str << std::endl;
+    LOG_INFO("Request:");
+    LOG_INFO("service_name:%s", service_name.c_str());
+    LOG_INFO("method_name:%s", method_name.c_str());
+    LOG_INFO("args_str:%s", args_str.c_str());
 
 
     //get service and method by name
     //service does not exist
     auto it = m_serviceMap.find(service_name);
     if(it == m_serviceMap.end()){
-        std::cout << service_name << "does not exist!" << std::endl;
+        //std::cout << service_name << "does not exist!" << std::endl;
+        LOG_ERROR("%s does not exist!",service_name.c_str());
         return;
     }
     //method does not exist
     auto mit = it->second.m_methodMap.find(method_name);
     if(mit == it->second.m_methodMap.end()){
-        std::cout << service_name << ":" << method_name << "does not exist!" << std::endl;
+        //std::cout << service_name << ":" << method_name << "does not exist!" << std::endl;
+        LOG_ERROR("%s:%s does not exist!",service_name.c_str(),method_name.c_str());
         return;
     }
         
@@ -133,7 +144,8 @@ void RpcProvider::OnMessage(const muduo::net::TcpConnectionPtr& conn,
     //generate rpc request and response args
     google::protobuf::Message *request = service->GetRequestPrototype(method).New();
     if(!request->ParseFromString(args_str)){
-        std::cout << "request parse error!" << std::endl;
+        //std::cout << "request parse error!" << std::endl;
+        LOG_ERROR("request parse error!");
         return;
     }
     google::protobuf::Message *response = service->GetResponsePrototype(method).New();
@@ -158,7 +170,8 @@ void RpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr& conn, goog
         conn->send(response_str);
         conn->shutdown();//break link
     }else{
-        std::cout << "serialize error!" << std::endl;
+        //std::cout << "serialize error!" << std::endl;
+        LOG_ERROR("serialize error!");
 
     }
     conn->shutdown();

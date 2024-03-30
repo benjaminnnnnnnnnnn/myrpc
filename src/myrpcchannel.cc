@@ -50,10 +50,10 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     send_rpc_str += rpc_header_str;//rpc_header_str
     send_rpc_str += args_str;//request
 
-    std::cout << "Request:" << rpc_header_str << std::endl;
-    std::cout << "service_name:" << service_name << std::endl;
-    std::cout << "method_name:" << method_name << std::endl;
-    std::cout << "args_str:" << args_str << std::endl;
+    //std::cout << "Request:" << rpc_header_str << std::endl;
+    //std::cout << "service_name:" << service_name << std::endl;
+    //std::cout << "method_name:" << method_name << std::endl;
+    //std::cout << "args_str:" << args_str << std::endl;
 
     //use tcp coding, complete rpc method invoke
     int clientfd = socket(AF_INET, SOCK_STREAM, 0);
