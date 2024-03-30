@@ -1,8 +1,6 @@
 #include <myrpcapplication.h>
 #include <iostream>
 #include <unistd.h>
-#include <myrpcchannel.h>
-#include <myrpccontroller.h>
 
 MyrpcConfig MyrpcApplication::m_config;
 

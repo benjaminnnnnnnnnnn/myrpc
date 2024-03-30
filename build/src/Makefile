@@ -130,6 +130,30 @@ myrpc/fast:
 	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/build
 .PHONY : myrpc/fast
 
+logger.o: logger.cc.o
+.PHONY : logger.o
+
+# target to build an object file
+logger.cc.o:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/logger.cc.o
+.PHONY : logger.cc.o
+
+logger.i: logger.cc.i
+.PHONY : logger.i
+
+# target to preprocess a source file
+logger.cc.i:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/logger.cc.i
+.PHONY : logger.cc.i
+
+logger.s: logger.cc.s
+.PHONY : logger.s
+
+# target to generate assembly for a file
+logger.cc.s:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/logger.cc.s
+.PHONY : logger.cc.s
+
 myrpcapplication.o: myrpcapplication.cc.o
 .PHONY : myrpcapplication.o
 
@@ -283,6 +307,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... myrpc"
+	@echo "... logger.o"
+	@echo "... logger.i"
+	@echo "... logger.s"
 	@echo "... myrpcapplication.o"
 	@echo "... myrpcapplication.i"
 	@echo "... myrpcapplication.s"

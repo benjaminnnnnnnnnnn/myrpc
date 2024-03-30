@@ -3,7 +3,7 @@
 #include <user.pb.h>
 #include <myrpcapplication.h>
 #include <rpcprovider.h>
-
+#include "logger.h"
 /*
 Local service
 provide two methods:
@@ -70,6 +70,9 @@ class UserService : public fixbug::UserServiceRpc{
 
 
 int main(int argc, char **argv){
+    LOG_INFO("first log message!");
+    LOG_ERROR("%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
+
     //Initialization
     MyrpcApplication::Init(argc,argv);
 

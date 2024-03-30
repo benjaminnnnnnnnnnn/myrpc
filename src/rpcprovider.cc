@@ -1,6 +1,8 @@
 #include <rpcprovider.h>
 #include <myrpcapplication.h>
 #include <rpcheader.pb.h>
+#include <logger.h>
+
 
 //the func must could receive any kind of service ,not one kind of service
 void RpcProvider::NotifyService(google::protobuf::Service *service){

@@ -1,0 +1,2 @@
+18:55:58 =>[error] first log message!
+18:55:58 =>[error] /home/gaoaoxiang/myrpc/example/callee/userservice.cc:main:74
