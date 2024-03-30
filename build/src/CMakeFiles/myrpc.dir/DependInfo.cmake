@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/gaoaoxiang/myrpc/src/myrpcapplication.cc" "src/CMakeFiles/myrpc.dir/myrpcapplication.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpcapplication.cc.o.d"
   "/home/gaoaoxiang/myrpc/src/myrpcchannel.cc" "src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o.d"
   "/home/gaoaoxiang/myrpc/src/myrpcconfig.cc" "src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpcconfig.cc.o.d"
+  "/home/gaoaoxiang/myrpc/src/myrpccontroller.cc" "src/CMakeFiles/myrpc.dir/myrpccontroller.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/myrpccontroller.cc.o.d"
   "/home/gaoaoxiang/myrpc/src/rpcheader.pb.cc" "src/CMakeFiles/myrpc.dir/rpcheader.pb.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/rpcheader.pb.cc.o.d"
   "/home/gaoaoxiang/myrpc/src/rpcprovider.cc" "src/CMakeFiles/myrpc.dir/rpcprovider.cc.o" "gcc" "src/CMakeFiles/myrpc.dir/rpcprovider.cc.o.d"
   )

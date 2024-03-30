@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/myrpc.dir/myrpcchannel.cc.o.d"
   "CMakeFiles/myrpc.dir/myrpcconfig.cc.o"
   "CMakeFiles/myrpc.dir/myrpcconfig.cc.o.d"
+  "CMakeFiles/myrpc.dir/myrpccontroller.cc.o"
+  "CMakeFiles/myrpc.dir/myrpccontroller.cc.o.d"
   "CMakeFiles/myrpc.dir/rpcheader.pb.cc.o"
   "CMakeFiles/myrpc.dir/rpcheader.pb.cc.o.d"
   "CMakeFiles/myrpc.dir/rpcprovider.cc.o"

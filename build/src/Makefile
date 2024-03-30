@@ -202,6 +202,30 @@ myrpcconfig.cc.s:
 	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpcconfig.cc.s
 .PHONY : myrpcconfig.cc.s
 
+myrpccontroller.o: myrpccontroller.cc.o
+.PHONY : myrpccontroller.o
+
+# target to build an object file
+myrpccontroller.cc.o:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpccontroller.cc.o
+.PHONY : myrpccontroller.cc.o
+
+myrpccontroller.i: myrpccontroller.cc.i
+.PHONY : myrpccontroller.i
+
+# target to preprocess a source file
+myrpccontroller.cc.i:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpccontroller.cc.i
+.PHONY : myrpccontroller.cc.i
+
+myrpccontroller.s: myrpccontroller.cc.s
+.PHONY : myrpccontroller.s
+
+# target to generate assembly for a file
+myrpccontroller.cc.s:
+	cd /home/gaoaoxiang/myrpc/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myrpc.dir/build.make src/CMakeFiles/myrpc.dir/myrpccontroller.cc.s
+.PHONY : myrpccontroller.cc.s
+
 rpcheader.pb.o: rpcheader.pb.cc.o
 .PHONY : rpcheader.pb.o
 
@@ -268,6 +292,9 @@ help:
 	@echo "... myrpcconfig.o"
 	@echo "... myrpcconfig.i"
 	@echo "... myrpcconfig.s"
+	@echo "... myrpccontroller.o"
+	@echo "... myrpccontroller.i"
+	@echo "... myrpccontroller.s"
 	@echo "... rpcheader.pb.o"
 	@echo "... rpcheader.pb.i"
 	@echo "... rpcheader.pb.s"

@@ -257,6 +257,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: \
  /usr/include/c++/11/cassert /usr/local/include/google/protobuf/service.h \
  /home/gaoaoxiang/myrpc/src/include/myrpcapplication.h \
  /home/gaoaoxiang/myrpc/src/include/myrpcconfig.h \
+ /home/gaoaoxiang/myrpc/src/include/myrpcchannel.h \
+ /home/gaoaoxiang/myrpc/src/include/myrpccontroller.h \
  /home/gaoaoxiang/myrpc/src/include/rpcprovider.h \
  /usr/include/muduo/net/TcpServer.h /usr/include/muduo/base/Atomic.h \
  /usr/include/muduo/base/noncopyable.h /usr/include/muduo/base/Types.h \

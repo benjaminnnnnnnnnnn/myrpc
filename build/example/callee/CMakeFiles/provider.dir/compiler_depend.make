@@ -628,6 +628,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../example/callee/users
   /usr/local/include/google/protobuf/service.h \
   ../src/include/myrpcapplication.h \
   ../src/include/myrpcconfig.h \
+  ../src/include/myrpcchannel.h \
+  ../src/include/myrpccontroller.h \
   ../src/include/rpcprovider.h \
   /usr/include/muduo/net/TcpServer.h \
   /usr/include/muduo/base/Atomic.h \
@@ -829,6 +831,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../example/callee/users
 /usr/include/boost/config/stdlib/libstdcpp3.hpp:
 
 ../src/include/rpcprovider.h:
+
+../src/include/myrpcchannel.h:
 
 ../src/include/myrpcconfig.h:
 
@@ -1475,6 +1479,8 @@ example/callee/CMakeFiles/provider.dir/userservice.cc.o: ../example/callee/users
 /usr/include/boost/type_index/type_index_facade.hpp:
 
 /usr/include/c++/11/bits/unique_ptr.h:
+
+../src/include/myrpccontroller.h:
 
 /usr/include/c++/11/exception:
 

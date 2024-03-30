@@ -13,9 +13,14 @@ class UserService : public fixbug::UserServiceRpc{
     bool Login(std::string name,std::string pwd){
         std::cout << "local service : login" << std::endl;
         std::cout << "name:" << name << "  pwd:" << pwd << std::endl;
-        return false;
+        return true;
     }
-
+    
+    bool Register(uint32_t id, std::string name, std::string pwd){
+        std::cout << "local service: Register" << std::endl;
+        std::cout << "id" << id << " name:" << name << " pwd:" << pwd << std::endl;
+        return true;
+    }
     /*
     rewrite the virtual func
     this func is invoked by myrpc
@@ -41,6 +46,24 @@ class UserService : public fixbug::UserServiceRpc{
         rc->set_errmsg("");
 
         //re invoke the runfunc
+        done->Run();
+    }
+
+    void Register(::google::protobuf::RpcController* controller,
+                       const ::fixbug::RegisterRequest* request,
+                       ::fixbug::RegisterResponse* response,
+                       ::google::protobuf::Closure* done){
+        uint32_t id = request->id();
+        std::string name = request->name();
+        std::string pwd = request->pwd();
+
+        bool ret = Register(id,name, pwd);
+
+        response->set_success(ret);
+        fixbug::ResultCode *rc = response->mutable_result();
+        rc->set_errcode(0);
+        rc->set_errmsg("");
+
         done->Run();
     }
 };

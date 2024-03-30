@@ -278,6 +278,7 @@ src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /home/gaoaoxiang/myrpc/src/include/myrpcapplication.h \
  /home/gaoaoxiang/myrpc/src/include/myrpcconfig.h \
+ /home/gaoaoxiang/myrpc/src/include/myrpccontroller.h \
  /usr/include/arpa/inet.h /usr/include/netinet/in.h \
  /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
