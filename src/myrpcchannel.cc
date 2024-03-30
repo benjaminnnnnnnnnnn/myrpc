@@ -8,6 +8,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include <myrpccontroller.h>
 
 //all method invoked by stub goes here
 void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
@@ -24,7 +25,8 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if(request->SerializeToString(&args_str)){
         args_size = args_str.size();
     }else{
-        std::cout << "serialize request failed!" << std::endl;
+        controller->SetFailed("serialize request failed!");
+        return;
     }
 
     //define request header
@@ -38,7 +40,7 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     if(rpcHeader.SerializeToString(&rpc_header_str)){
         header_size = rpc_header_str.size();
     }else{
-        std::cout <<"serialize rpc header error!" << std::endl;
+        controller->SetFailed("serialize rpc header error!");
         return;
     }
 
@@ -48,19 +50,18 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     send_rpc_str += rpc_header_str;//rpc_header_str
     send_rpc_str += args_str;//request
 
-    std::cout << "=========================================" << std::endl;
-    std::cout << "header_size:" << header_size << std::endl;
-    std::cout << "rpc_header_str:" << rpc_header_str << std::endl;
+    std::cout << "Request:" << rpc_header_str << std::endl;
     std::cout << "service_name:" << service_name << std::endl;
     std::cout << "method_name:" << method_name << std::endl;
     std::cout << "args_str:" << args_str << std::endl;
-    std::cout << "=========================================" << std::endl;
 
     //use tcp coding, complete rpc method invoke
     int clientfd = socket(AF_INET, SOCK_STREAM, 0);
     if(-1 == clientfd){
-        std::cout << "create socket errno:" << errno << std::endl;
-        exit(EXIT_FAILURE);
+        char errtxt[512] = {0};
+        sprintf(errtxt, "create socket errno! errno:%d", errno);
+        controller->SetFailed(errtxt);
+        return;
     }
 
     std::string ip = MyrpcApplication::GetInstance().GetConfig().Load("rpcserverip");
@@ -74,14 +75,18 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
 
     //connect rpc server node
     if(-1 == connect(clientfd,(struct sockaddr*)&server_addr,sizeof(server_addr))){
-        std::cout << "connect error! errno:" << errno << std::endl;
+        char errtxt[512] = {0};
+        sprintf(errtxt, "connect errno! errno:%d", errno);
+        controller->SetFailed(errtxt);
         close(clientfd);
-        exit(EXIT_FAILURE);
+        return;
     }
 
     //send rpc request
     if(-1 == send(clientfd, send_rpc_str.c_str(), send_rpc_str.size(), 0)){
-        std::cout << "send error! errno:" << errno << std::endl;
+        char errtxt[512] = {0};
+        sprintf(errtxt, "send errno! errno:%d", errno);
+        controller->SetFailed(errtxt);
         close(clientfd);
         return;
     }
@@ -90,7 +95,9 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     char recv_buf[1024] = {0};
     int recv_size = 0;
     if(-1 == (recv_size = recv(clientfd,recv_buf,1024,0))){
-        std::cout<< "recv error! errno:" << errno << std::endl;
+        char errtxt[512] = {0};
+        sprintf(errtxt, "receive errno! errno:%d", errno);
+        controller->SetFailed(errtxt);
         close(clientfd);
         return;
     }
@@ -98,10 +105,12 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
     //write response into response
     //std::string response_str(recv_buf,0,recv_size);//construct error
     if(!response->ParseFromArray(recv_buf, recv_size)){
-        std::cout << "parse error! response_str:" << recv_buf << std::endl;
+        char errtxt[2046] = {0};
+        sprintf(errtxt, "parse errno! received_str:%s", recv_buf);
+        controller->SetFailed(errtxt);
         close(clientfd);
         return;
     }
-
+    
     close(clientfd);
 }

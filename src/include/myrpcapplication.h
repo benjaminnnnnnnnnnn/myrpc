@@ -1,6 +1,8 @@
 #pragma once
 
 #include <myrpcconfig.h>
+#include <myrpcchannel.h>
+#include <myrpccontroller.h>
 
 //myrpc base class
 class MyrpcApplication{
