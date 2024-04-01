@@ -8,7 +8,6 @@
 #include <google/protobuf/descriptor.h>
 #include <unordered_map>
 #include <string>
-#include <logger.h>
 
 //publish rpc net service class
 class RpcProvider{
