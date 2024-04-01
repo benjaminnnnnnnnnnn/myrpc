@@ -9,6 +9,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <myrpccontroller.h>
+#include "zookeeperutil.h"
 
 //all method invoked by stub goes here
 void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
@@ -64,9 +65,25 @@ void MyrpcChannel::CallMethod(const google::protobuf::MethodDescriptor* method,
         return;
     }
 
-    std::string ip = MyrpcApplication::GetInstance().GetConfig().Load("rpcserverip");
-    uint16_t port = atoi(MyrpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
-    
+    //std::string ip = MyrpcApplication::GetInstance().GetConfig().Load("rpcserverip");
+    //uint16_t port = atoi(MyrpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
+    //get ip and port by zookeeper
+    ZkClient zkCli;
+    zkCli.Start();
+    // /UserServiceRpc/Login
+    std::string method_path = "/" + service_name + "/" + method_name;
+    std::string host_data = zkCli.GetData(method_path.c_str());
+    if(host_data == ""){
+        controller->SetFailed(method_path + "does not exist!");
+        return;
+    }
+    int idx = host_data.find(":");
+    if(idx == -1){
+        controller->SetFailed(method_path + "is invalid!");
+        return;
+    }
+    std::string ip = host_data.substr(0, idx);
+    uint16_t port = atoi(host_data.substr(idx+1, host_data.size()-idx).c_str());
 
     struct sockaddr_in server_addr;
     server_addr.sin_family = AF_INET;

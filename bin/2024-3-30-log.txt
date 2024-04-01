@@ -1,2 +1,16 @@
 18:55:58 =>[error] first log message!
 18:55:58 =>[error] /home/gaoaoxiang/myrpc/example/callee/userservice.cc:main:74
+19:21:49 =>[info] first log message!
+19:21:49 =>[info] /home/gaoaoxiang/myrpc/example/callee/userservice.cc:main:74
+19:21:49 =>[info] service_name:UserServiceRpc
+19:21:49 =>[info] method_name:Login
+19:21:49 =>[info] method_name:Register
+19:21:49 =>[info] Request:
+19:22:54 =>[info] service_name:UserServiceRpc
+19:22:54 =>[info] method_name:Login
+19:22:54 =>[info] args_str:
+	zhang san123456
+19:22:54 =>[info] Request:
+19:22:54 =>[info] service_name:UserServiceRpc
+19:22:54 =>[info] method_name:Register
+19:22:54 =>[info] args_str:×lisi123456

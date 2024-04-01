@@ -344,4 +344,18 @@ src/CMakeFiles/myrpc.dir/rpcprovider.cc.o: \
  /usr/local/include/google/protobuf/map_entry_lite.h \
  /usr/local/include/google/protobuf/map_field_lite.h \
  /usr/local/include/google/protobuf/extension_set.h \
- /usr/include/c++/11/cassert
+ /usr/include/c++/11/cassert /home/gaoaoxiang/myrpc/src/include/logger.h \
+ /home/gaoaoxiang/myrpc/src/include/lockqueue.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
+ /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
+ /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
+ /usr/include/c++/11/condition_variable \
+ /home/gaoaoxiang/myrpc/src/include/zookeeperutil.h \
+ /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/local/include/zookeeper/zookeeper.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/local/include/zookeeper/proto.h \
+ /usr/local/include/zookeeper/zookeeper_version.h \
+ /usr/local/include/zookeeper/recordio.h \
+ /usr/local/include/zookeeper/zookeeper.jute.h

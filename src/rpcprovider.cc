@@ -2,7 +2,7 @@
 #include <myrpcapplication.h>
 #include <rpcheader.pb.h>
 #include <logger.h>
-
+#include <zookeeperutil.h>
 
 //the func must could receive any kind of service ,not one kind of service
 void RpcProvider::NotifyService(google::protobuf::Service *service){
@@ -54,6 +54,26 @@ void RpcProvider::Run(){
     server.setThreadNum(4);
 
     //std::cout << "RpcProvider start service at ip:" << ip << "port:" << port << std::endl;
+
+    //register all rpc service and method on zookeeper
+    //so that rpc client can find service by it
+    //session timeout 30s ,zkclient net I/O thread 1/3 timeout send ping
+    ZkClient zkCli;
+    zkCli.Start();
+    //service node are all perpetual, method node are all temporary
+    for(auto & sp : m_serviceMap){
+        //  /UserService
+        std::string service_path = "/" + sp.first;
+        zkCli.Create(service_path.c_str(), nullptr, 0);
+        //  /UserService/Login
+        for(auto & mp : sp.second.m_methodMap){
+            std::string method_path = service_path + "/" + mp.first;
+            char method_path_data[128] = {0};
+            sprintf(method_path_data,"%s:%d", ip.c_str(),port);
+            //temporary node
+            zkCli.Create(method_path.c_str(), method_path_data, strlen(method_path_data), ZOO_EPHEMERAL);
+        }
+    }
 
     //start net service
     server.start();

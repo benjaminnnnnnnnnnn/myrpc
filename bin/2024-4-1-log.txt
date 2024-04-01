@@ -1,0 +1,27 @@
+15:23:39 =>[info] service_name:UserServiceRpc
+15:23:39 =>[info] method_name:Login
+15:23:39 =>[info] method_name:Register
+15:23:39 =>[info] zookeeper init success!
+16:6:1 =>[info] service_name:UserServiceRpc
+16:6:1 =>[info] method_name:Login
+16:6:1 =>[info] method_name:Register
+16:6:1 =>[info] zookeeper init success!
+16:10:27 =>[info] service_name:UserServiceRpc
+16:10:27 =>[info] method_name:Login
+16:10:27 =>[info] method_name:Register
+16:10:27 =>[info] zookeeper init success!
+16:33:55 =>[info] service_name:UserServiceRpc
+16:33:55 =>[info] method_name:Login
+16:33:55 =>[info] method_name:Register
+16:33:55 =>[info] zookeeper init success!
+16:35:38 =>[info] zookeeper init success!
+16:33:55 =>[info] Request:
+16:35:38 =>[info] service_name:UserServiceRpc
+16:35:38 =>[info] method_name:Login
+16:35:38 =>[info] args_str:
+	zhang san123456
+16:35:38 =>[info] zookeeper init success!
+16:35:38 =>[info] Request:
+16:35:38 =>[info] service_name:UserServiceRpc
+16:35:38 =>[info] method_name:Register
+16:35:38 =>[info] args_str:×lisi123456

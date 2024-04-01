@@ -167,6 +167,20 @@ src/CMakeFiles/myrpc.dir/logger.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/logger.cc.s"
 	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaoaoxiang/myrpc/src/logger.cc -o CMakeFiles/myrpc.dir/logger.cc.s
 
+src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o: src/CMakeFiles/myrpc.dir/flags.make
+src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o: ../src/zookeeperutil.cc
+src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o: src/CMakeFiles/myrpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o -MF CMakeFiles/myrpc.dir/zookeeperutil.cc.o.d -o CMakeFiles/myrpc.dir/zookeeperutil.cc.o -c /home/gaoaoxiang/myrpc/src/zookeeperutil.cc
+
+src/CMakeFiles/myrpc.dir/zookeeperutil.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myrpc.dir/zookeeperutil.cc.i"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaoaoxiang/myrpc/src/zookeeperutil.cc > CMakeFiles/myrpc.dir/zookeeperutil.cc.i
+
+src/CMakeFiles/myrpc.dir/zookeeperutil.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myrpc.dir/zookeeperutil.cc.s"
+	cd /home/gaoaoxiang/myrpc/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaoaoxiang/myrpc/src/zookeeperutil.cc -o CMakeFiles/myrpc.dir/zookeeperutil.cc.s
+
 # Object files for target myrpc
 myrpc_OBJECTS = \
 "CMakeFiles/myrpc.dir/myrpcapplication.cc.o" \
@@ -175,7 +189,8 @@ myrpc_OBJECTS = \
 "CMakeFiles/myrpc.dir/rpcprovider.cc.o" \
 "CMakeFiles/myrpc.dir/myrpcchannel.cc.o" \
 "CMakeFiles/myrpc.dir/myrpccontroller.cc.o" \
-"CMakeFiles/myrpc.dir/logger.cc.o"
+"CMakeFiles/myrpc.dir/logger.cc.o" \
+"CMakeFiles/myrpc.dir/zookeeperutil.cc.o"
 
 # External object files for target myrpc
 myrpc_EXTERNAL_OBJECTS =
@@ -187,9 +202,10 @@ myrpc_EXTERNAL_OBJECTS =
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/myrpcchannel.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/myrpccontroller.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/logger.cc.o
+../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/zookeeperutil.cc.o
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/build.make
 ../lib/libmyrpc.a: src/CMakeFiles/myrpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../lib/libmyrpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaoaoxiang/myrpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library ../../lib/libmyrpc.a"
 	cd /home/gaoaoxiang/myrpc/build/src && $(CMAKE_COMMAND) -P CMakeFiles/myrpc.dir/cmake_clean_target.cmake
 	cd /home/gaoaoxiang/myrpc/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myrpc.dir/link.txt --verbose=$(VERBOSE)
 
