@@ -3,7 +3,7 @@ MYRPC is a Remote Procedure Call Protocol framework. Assume there's a huge proje
 MYRPC does all the work between service provider and service consumer, all consumer has to do is fill the message about to send, and give it to the MYRPC, if everything works fine, it will get the right response.
 And provider needs to make sure itself works fine and wait for the request, and response it.
 
-Before use the project, you should know it can only run on ***LINUX***.
+Before using the project, you should know it can only run on ***LINUX***.
 
 ## Intallation and Usage Instructions
 ### Clone the Repository
@@ -53,7 +53,97 @@ add
 ```
 /usr/local/protobuf/lib
 ```
+#### muduo
+muduo is compiled by cmake, so make sure you have installed cmake
+```
+sudo apt-get install cmake
+```
+necessary lib
+```
+sudo apt-get install libboost-dev libboost-test-dev
+```
+unnecessary lib
+```
+sudo apt-get install libcurl4-openssl-dev libc-ares-dev
+sudo apt-get install protobuf-compiler libprotobuf-dev
+```
+download muduo from official website
+```
+unzip muduo-master.zip
+cd muduo-master
+./build.sh
+./build.sh install
+```
+#### zookeeper
+download zookeeper and unzip it
+```
+wget https://archive.apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
+tar zvxf zookeeper-3.4.10.tar.gz
+```
+into /conf and copy the zoo_sample.cfg rename zoo.cfg and change the datadir
+```
+cd conf
+mv zoosample.cfg zoo.cfg
+sudo nano zoo.cfg
+```
+datadir = /your/new/dir/to/save/the/zookeeper_data
+and zookeeper default port is 2181
 
+go to src/c, and compile
+```
+sudo ./configure
+sudo make
+sudo make install
+```
+zookeeper depends on java, so you should install jdk
+
+you should start the zookeeper server, so service provider and consumer could link to zkserver
+```
+cd bin
+./zkServer.sh start
+```
+
+### compile MYRPC
+```
+cd myrpc
+./autobuild.sh
+```
+make sure autobuild.sh have authority
+you can use cammand chmod
+```
+chmod 777 autobuild.sh
+```
+after all above, when you use MYRPC, you just have to include dir lib, there are all the so lib and .h file.
+
+## How to use MYRPC
+### configuration for both
+#### config file
+when invoke main func, it needs two args, for the config file
+you should create a *.conf file under executable file directory
+run the executable file
+```
+./provider/./consumer -i *.conf
+```
+and you should write something in *.conf file
+provider has to fill the rpcserverip and port by its ip and port
+and zookeeper ip&port with the right ip&port
+consumer only need zookeeper ip&port,
+it will get server ip&port by connecting to zookeeper
+```
+#rpc node ip
+rpcserverip=127.0.0.1
+#rpc node port
+rpcserverport=8000
+#zookeeper ip
+zookeeperip=127.0.0.1
+#zookeeper port
+zookeeperport=2181
+```
+#### protoc file
+
+### For provider/server
+
+### For comsumer/client
 
 
 
