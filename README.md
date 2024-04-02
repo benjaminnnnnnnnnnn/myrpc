@@ -5,15 +5,15 @@ And provider needs to make sure itself works fine and wait for the request, and 
 
 Before use the project, you should know it can only run on ***LINUX***.
 
-### Intallation and Usage Instructions
-#### Clone the Repository
+## Intallation and Usage Instructions
+### Clone the Repository
 You can use the command below to clone the project
 ```
 git clone https://github.com/benjaminnnnnnnnnnn/myrpc.git
 ```
-#### Install Dependencies
+### Install Dependencies
 Before use MYRPC, you should install several dependecies, protobuf, muduo and zookeeper.
-##### Protobuf
+#### Protobuf
 download protobuf from github and unzip it
 ```
 git clone https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3
