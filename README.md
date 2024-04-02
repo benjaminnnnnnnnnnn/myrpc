@@ -236,6 +236,7 @@ and consumer can read response message
 ## Project Structure and File Organization
 
 File/Dir | Description | purpose
+ ---- | ----- | ------ 
 /.vscode | vscode config dir | vscode save the project environment
 /bin | binary dir | saves excutable files
 /build | building dir | saves file generated while building the project
