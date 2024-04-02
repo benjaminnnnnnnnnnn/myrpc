@@ -8,26 +8,51 @@ Before use the project, you should know it can only run on ***LINUX***.
 ### Intallation and Usage Instructions
 #### Clone the Repository
 You can use the command below to clone the project
-'''
+```
 git clone https://github.com/benjaminnnnnnnnnnn/myrpc.git
-'''
+```
 #### Install Dependencies
 Before use MYRPC, you should install several dependecies, protobuf, muduo and zookeeper.
 ##### Protobuf
 download protobuf from github and unzip it
-'''
+```
 git clone https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3
 tar zvxf protobuf-python-3.17.3.tar.gz
-'''
+```
 install dependecies
-'''
+```
 cd protobuf-3.17.3/
 //./autogen.sh  //some old version need this command, new version could skip
 ./configure --prefix=/usr/local/protobuf
 sudo make
 sudo make install
 sudo ldconfig   
-'''
+```
+check the protoc version
+```
+protoc --version
+```
+add environment variable
+```
+sudo vim /etc/profile
+```
+add
+```
+export PATH=$PATH:/usr/local/protobuf/bin/
+export PKG_CONFIG_PATH=/usr/local/protobuf/lib/pkgconfig/
+```
+refresh
+```
+source /etc/profile
+```
+Configure the dynamic link library path
+```
+sudo vim /etc/ld.so.conf
+```
+add
+```
+/usr/local/protobuf/lib
+```
 
 
 
@@ -59,7 +84,7 @@ ___特别强调___  (示例：粗斜体)
 2、代码  
 `<hello world>`  
 3、代码块高亮  
-```
+```  
 @Override
 protected void onDestroy() {
     EventBus.getDefault().unregister(this);
