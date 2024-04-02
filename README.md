@@ -204,8 +204,35 @@ int main(int argc, char **argv){
 }
 ```
 ### For comsumer/client
+consumer also needs to initiate MYRPC first
+```
+MyrpcApplication::Init(argc,argv);
+```
+consumer don't have to inherit class and rewrite func, it just has to instance service_stub by give a new channel
+```
+fixbug::UserServiceRpc_Stub stub(new MyrpcChannel());
+```
+controller is unnecessary, nullptr is ok. 
+Instance a rpc request and fill info in it. 
+Instance a response to receive the response sended back
+```
+//rpc method request
+fixbug::LoginRequest request;
+request.set_name("zhang san");
+request.set_pwd("123456");
 
-
+fixbug::LoginResponse response;
+```
+Invoke the func
+```
+//rpc method invoke ----->callmethod
+stub.Login(&controller,&request,&response,nullptr);
+```
+and consumer can read response message
+```
+//response.success()
+//response.result().errcode()
+```
 
 
 一、标题写法：
